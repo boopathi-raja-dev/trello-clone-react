@@ -1,0 +1,74 @@
+.title
+{
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0;
+    padding: 10px 10px 10px 12px;
+    background-color: transparent;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    color: #172b4d;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.list
+{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: 2px 4px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1;
+    list-style: none;
+
+}
+
+.list-item
+{
+    display: flex;
+    flex-direction: row;
+    scroll-margin: 80px;
+    border-radius: 5px;
+    border: 1px solid #E6E8EC;
+    background-color: #ffffff;
+    box-shadow: 0.3px 0.3px rgb(151, 147, 147);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.list-item .del-icon
+{
+    display: none;
+    max-width: 30px;
+    max-height: 50px;
+    margin: 10px;
+}
+.list-item:hover
+{  
+    border:2px solid #4d97d3;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.list-item:hover .del-icon
+{
+    display: block;
+}
+
+.list-item-content
+{ color:black;
+    display: block;
+    margin-bottom: 4px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    white-space: normal;
+    padding: 10px;
+}

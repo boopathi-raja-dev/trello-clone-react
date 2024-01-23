@@ -1,0 +1,28 @@
+.move_box
+{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    background-color: transparent;
+    height: 100px;
+    width: 200px;
+    box-sizing: border-box;
+    z-index: 40;
+    margin-left: 10px;
+}
+
+.move-list
+{
+    background-color: #091e420f;
+    color: #172b4d;
+    position: absolute;
+    border: none;
+    top:0;
+    left:10px;
+    font-weight: 600;
+    font-size: 16px;
+    height:30px;
+    width:80%;
+    z-index: 40;
+}
+

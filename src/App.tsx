@@ -1,24 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import NavBar from './shared/components/Navbar/navBar';
+import Board from './shared/components/Board/Board';
+import Cards from './shared/components/Cards/Cards';
+import ModalCreate from './shared/components/ModalCreate/ModalCreate';
+import { taskContext } from './context/TaskContent';
+import { CardContext} from './context/CardContext';
+import { ModalContext } from './context/ModalContex'; 
+import { CardsTypes } from './shared/types/CardsTypes';
+import { initialCards } from './context/CardContext';
 
 function App() {
+  const [modalVisible,setModalVisible] = useState<boolean>(false);
+  const [task,setTask] = useState<string[]>([]);
+  const [ cardTypes, setCardTypes ] = useState<CardsTypes[]>(initialCards);
+  const [taskValue,setTaskValue] = useState<string>('');
+  const [titleValue,setTitleValue] = useState<string>('');
+
+  const handleVisible = () => {
+       setModalVisible(!modalVisible);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CardContext.Provider value = {{cardTypes,setCardTypes}}>
+        <taskContext.Provider value = {{task,setTask}}>
+          <ModalContext.Provider value = {{modalVisible,setModalVisible,taskValue,setTaskValue,titleValue,setTitleValue}}>
+              <NavBar/>
+              <Board/>
+              <Cards />
+              {modalVisible && <ModalCreate modalVisible = {modalVisible} handleVisible = {handleVisible}/>}
+          </ModalContext.Provider>
+        </taskContext.Provider>
+      </CardContext.Provider>
     </div>
   );
 }

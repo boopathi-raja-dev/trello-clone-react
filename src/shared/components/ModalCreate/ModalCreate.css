@@ -1,0 +1,146 @@
+.window-overlay
+{
+    display: block;
+    align-items: flex-start;
+    background-color: #000000a3;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+
+}
+.bus_icons{
+    position: absolute;
+    left:14px;
+    top:46px;
+}
+
+.window {
+    box-sizing: border-box;
+    display: block;
+    background-color: #F1F2F4;
+    border-radius: 12px;
+    margin: 48px 25%;
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+    z-index: 25;
+    padding: 10px;
+}
+
+.modal_title {
+    color:#172b4d;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 16px;
+    font-weight: 600;
+    height: 32px;
+    line-height: 24px;
+    margin: -6px -10px;
+    min-height: 24px;
+    padding: 30px 40px;
+    resize: none;
+}
+
+.modal_input
+{ 
+    position: relative;
+    margin: 0 20px;
+    border: none;
+    height:200px;
+    border-radius: 10px;
+    width: 90%;
+    overflow: hidden;
+    box-sizing: border-box;
+    color:black;
+    font-size: 14px;
+    border: 1px solid #E6E8EC;
+    background-color: #091e420f;
+    box-shadow: 0.3px 0.3px rgb(151, 147, 147);
+}
+
+.modal_input:focus
+{   background-color: #ffffff;
+    border: none;
+    outline: none;
+    
+}
+
+.modal_input::placeholder
+{
+   color: #172b4d;
+   font-weight: 400;
+   font-size: 15px;
+   position: absolute;
+   top:15px;
+   left:10px;
+
+}
+
+.title_input
+{
+    width: 90%;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #172b4d;
+    height: 40px;
+    padding-left: 10px;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.title_input:focus
+{
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+    border: 1px solid #E6E8EC;
+    background-color: #ffffff;
+    box-shadow: 0.3px 0.3px rgb(151, 147, 147);
+}
+.title_input:hover{
+    border:2px solid #4d97d3;
+}
+
+.move
+{    cursor: pointer;
+    display: block;
+    padding: 8px;
+    text-align: center;
+    color: #ffffff;
+    margin: 20px;
+    height: 39px;
+    width: 67px;
+    scroll-margin: 80px;
+    background-color: #0c66e4;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight:600 ;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+}
+
+.move:hover
+{
+    background-color:#0055CC;
+}
+.close {
+    position: absolute;
+    right: 50px;
+    color: grey;
+    font-size: 17px;
+}
+.desc_icon{
+    position: absolute;
+    top: 122px;
+    left: 10px;
+}
