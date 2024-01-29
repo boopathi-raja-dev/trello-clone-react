@@ -1,0 +1,230 @@
+.board{
+    width: 16px;
+    position :fixed;
+    z-index: 5;
+    height: calc(100vh - 50px);
+    margin: 0px;
+    background-color:#AC4C76;
+    border-top: 1px solid #B35A85;
+border-right: 1px solid #B35A85;
+   border-right: 1px solid #D575A3;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.arrow_bar {
+    position: relative;
+    right: -3.5px;
+    top: 15px;
+    color: white;
+    border-radius: 100%;
+    z-index: 2;
+    border: 1px solid #B35A85;
+    background-color: #874967;
+    margin: 0;
+}
+.board_container{
+    width: calc( 1600px - 20px );
+    height: 56px;
+    position: relative;
+    background-color: #9c446e;
+    border-top: 1px solid #B35A85;
+    display: flex;
+
+}
+.wrapper{
+    display: flex;
+}
+
+.board_name {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 32px;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
+    margin-bottom: 12px;
+    margin-left: 33px;
+    padding: 0 10px;
+}
+.board_name:hover{
+    border: 0px solid white;
+    border-radius: 2px;
+    color: white;
+    background-color: #A6C5E229;
+}
+.star_icon {
+    position: absolute;
+    left: 191px;
+    top: 13px;
+    padding:  6px;
+    color: white;
+}
+.members{
+    position: absolute;
+    left: 227px;
+    padding:  6px;
+    top: 13px;
+    color: white;
+}
+
+
+.arrow_drop {
+    position: absolute;
+    left: 352px;
+    color: white;
+    padding:  6px;
+    top: 12px;
+}
+.rocket_icon {
+    position: absolute;
+    right: 292px;
+    padding:  6px;
+    top: 13px;
+    color: white;
+}
+
+.thunder {
+    position: absolute;
+    right: 256px;
+    padding:  6px;
+    top: 13px;
+    width: 16px;
+}
+.pyramid_icon{
+    position: absolute;
+    right: 221px;
+    top: 13px;
+    color: white;
+    width: 16px;
+    padding: 6px;
+}
+.booster_icon {
+    position: absolute;
+    right: 132px;
+    width: 9px;
+    top: 33px;
+    height: 9px;
+    z-index: 2;
+}
+
+.three_dot {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    padding: 6px;
+    color: white;
+}
+.btn-board {
+    position: relative;
+    left: 75px;
+    top: 13px;
+    border: 0px solid #dfe1e6;
+    border-radius: 2px;
+    margin-bottom: 25px;
+    padding-right: 15px;
+   padding-bottom: 5px;
+    padding-left: 10px;
+    font-size: 13px;
+    padding-top: 3px;
+    font-weight: 600;
+    color: #172b4d;
+    background-color: #dfe1e6;
+}
+.filter_txt {
+    color: white;
+    position: absolute;
+    right: 172px;
+    font-size: 14px;
+    top: px;
+    font-weight: 500;
+    padding: 6px;
+}
+
+.id_icon_boost {
+    color: white;
+    position: absolute;
+    right: 130px;
+    border: 1px solid #DE350A;
+    padding: 3px 4px;
+    font-size: 13px;
+    border-radius: 100%;
+    width: 18px;
+    font-weight: 500;
+    height: 18px;
+    background-color: #DE350A;
+    top: 17px;
+}
+
+.star_icon:hover{
+    border: 0px solid white;
+    border-radius: 2px;
+    color: white;
+    background-color: #A6C5E229;
+}
+.members:hover{
+    border: 0px solid white;
+    border-radius: 2px;
+    color: white;
+    background-color: #A6C5E229;
+}
+.rocket_icon:hover{
+    border: 0px solid white;
+    border-radius: 2px;
+    color: white;
+    background-color: #A6C5E229;
+}
+.thunder:hover{
+    border: 0px solid white;
+    border-radius: 2px;
+    color: white;
+    background-color: #A6C5E229;
+}
+.three_dot:hover{
+    border: 0px solid white;
+    border-radius: 2px;
+    color: white;
+    background-color: #A6C5E229;
+}
+.filter_txt:hover{
+    border: 0px solid white;
+    border-radius: 2px;
+    color: white;
+    background-color: #A6C5E229;
+}
+.pyramid_icon:hover{
+    border: 0px solid white;
+    border-radius: 2px;
+    color: white;
+    background-color: #A6C5E229;
+}
+.arrow_drop:hover{
+    border: 0px solid white;
+    border-radius: 2px;
+    color: white;
+    background-color: #A6C5E229;
+}
+.btn-board:hover{
+    background-color: #FFFFFF;
+}
+.btn-share {
+    position: relative;
+    top: 14px;
+    right: -1087px;
+    width:81px;
+    border: 0px solid #dfe1e6;
+    border-radius: 2px;
+    margin-bottom: 25px;
+    padding-right: 15px;
+   padding-bottom: 27px;
+    padding-left: 10px;
+    font-size: 13px;
+    padding-top: 3px;
+    font-weight: 600;
+    color: #172b4d;
+    background-color: #dfe1e6;
+}
+.btn-share:hover{
+    background-color: #FFFFFF;
+}
