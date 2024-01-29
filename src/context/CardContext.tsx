@@ -1,6 +1,5 @@
 import { CardsTypes } from "../shared/types/CardsTypes";
 import { createContext,useContext,useState } from "react";
-import { TaskContent } from "../shared/types/TaskTypes";
 
 type modal = 
 {
@@ -12,17 +11,20 @@ export const initialCards:CardsTypes[] =  [
     {
         index: 1,
         title:'To do',
-        task:[]
+        task:[],
+        description:[]
     },
     {
         index:2,
         title:'Doing',
-        task:[]
+        task:[],
+        description:[]
     },
     {
         index:3,
         title:'Done',
-        task:[]
+        task:[],
+        description:[]
     }
 ]
 

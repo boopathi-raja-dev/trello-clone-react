@@ -3,22 +3,30 @@ import { ModalContext } from '../../../context/ModalContex';
 import { useContext, useState } from 'react';
 import Movecard from '../Movecard/Movecard';
 import { MoveContext } from '../../../context/MoveContex'; 
+import Deletecard from '../Deletecard/Deletecard';
+import { CardContext } from '../../../context/CardContext';
+import { title } from 'process';
 
 type props = {
   modalVisible:boolean,
-  handleVisible:()=>void
+  handleVisible:()=>void,
 }
-
 function ModalCreate({modalVisible, handleVisible}:props) {
-
   const useModalContext = useContext(ModalContext);
   const taskValue = useModalContext?.taskValue!;
   const setTaskValue = useModalContext?.setTaskValue!;
   const titleValue = useModalContext?.titleValue!;
   const [drop,setDrop] = useState<boolean>(false);
+  const [large,setLarge] = useState<boolean>(false);
+
   const setModalVisible = useModalContext?.setModalVisible!;
- 
- 
+  const card = useContext(CardContext);
+    const cardTypes = card?.cardTypes!;
+    const setCardTypes = card?.setCardTypes!;
+
+    
+
+    
   return (
     <div className ='window-overlay'>
       <div className='window'>
@@ -27,19 +35,24 @@ function ModalCreate({modalVisible, handleVisible}:props) {
 
           <input className = 'title_input' value = {taskValue} onChange={(e)=>{setTaskValue(e.target.value)}}></input>
           <span className='close' onClick={handleVisible}>&#10005;</span>
+          <span className='list-type'>in list &nbsp;<span className='underline'>{titleValue}</span></span>
         </div>
         <div className='modal_title'>
         <svg width="24"  className='desc_icon' height="24" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM4 9C3.44772 9 3 9.44772 3 10C3 10.5523 3.44772 11 4 11H20C20.5523 11 21 10.5523 21 10C21 9.44772 20.5523 9 20 9H4ZM3 14C3 13.4477 3.44772 13 4 13H20C20.5523 13 21 13.4477 21 14C21 14.5523 20.5523 15 20 15H4C3.44772 15 3 14.5523 3 14ZM4 17C3.44772 17 3 17.4477 3 18C3 18.5523 3.44772 19 4 19H14C14.5523 19 15 18.5523 15 18C15 17.4477 14.5523 17 14 17H4Z" fill="currentColor"></path></svg>
           Description
         </div>
-        <input className='modal_input' placeholder='Add a more detailed description...'>
-        </input>
+        <input
+          className={`modal_input ${large ? 'large' : 'small'}`}
+          placeholder='Add a more detailed description...' onClick={()=>setLarge(!large)}
+        /> 
+        <div className='action'>Actions</div>       
         <div className='move' onClick={()=>setDrop(!drop)}>
           Move 
         </div>
+         <Deletecard title={titleValue} value={taskValue} />
         <div>
           <MoveContext.Provider value={{drop,setDrop}}>
-              {drop && <Movecard />}
+          {drop && <Movecard  />}
           </MoveContext.Provider>
         </div>
       </div>
@@ -50,3 +63,7 @@ function ModalCreate({modalVisible, handleVisible}:props) {
 }
 
 export default ModalCreate
+
+
+
+

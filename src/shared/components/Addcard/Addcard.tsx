@@ -12,6 +12,8 @@ function Addcard({title,addCard}:props) {
 
   const [cardDisplay,setCardDisplay] = useState<boolean>(true);
   const [Cardtext,setCardtext] = useState<string>('');
+  const [error, setError] = useState<string>('');
+
 
   const inputDisplay = () =>
   {
@@ -21,22 +23,24 @@ function Addcard({title,addCard}:props) {
   {
     setCardDisplay(true);
     setCardtext("")
+    setError('');
+
   }
 
-  const handleClick = () =>
-  {
-    if(Cardtext === '')
-        setCardDisplay(true)
-
-    else{
-        addCard(title,Cardtext);
-
-      
-        setCardtext('');
-    }
+  const handleClick = () => {
+    if (Cardtext === '') {
+      setError('*Title is required');
     
-  }
-
+    } else if (!/^[a-zA-Z][a-zA-Z0-9\s]*$/.test(Cardtext)) {
+      setError('*First character and following character should not be a special character');
+  
+    } else {
+      addCard(title, Cardtext);
+      setCardtext('');
+      setError('');
+      setCardDisplay(false);
+    }
+  };
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       handleClick();
@@ -58,7 +62,8 @@ function Addcard({title,addCard}:props) {
      </button> :
         <div >
             <input className='input-title' placeholder='Enter a title for this card...' onChange={(e)=>{setCardtext(e.target.value)}} value = {Cardtext} onKeyDown={handleKeyPress}></input>
-
+   
+            {error && <div className='error'>{error}</div>}
             <button className = 'btn' onClick = {handleClick}>
      Add card
             </button>

@@ -1,5 +1,6 @@
 export interface CardsTypes {
     index: number,
     title:string,
-    task:string[]
+    task:string[],
+    description:string[]
 }

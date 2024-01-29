@@ -13,6 +13,7 @@
     z-index: 20;
 
 }
+
 .bus_icons{
     position: absolute;
     left:14px;
@@ -30,6 +31,7 @@
     width: 50%;
     z-index: 25;
     padding: 10px;
+    min-height: 827px;
 }
 
 .modal_title {
@@ -53,9 +55,9 @@
     position: relative;
     margin: 0 20px;
     border: none;
-    height:200px;
-    border-radius: 10px;
+    height:57px;
     width: 90%;
+    border-radius: 10px;
     overflow: hidden;
     box-sizing: border-box;
     color:black;
@@ -63,12 +65,24 @@
     border: 1px solid #E6E8EC;
     background-color: #091e420f;
     box-shadow: 0.3px 0.3px rgb(151, 147, 147);
+    transition: width 0.3s, height 0.3s;
 }
+
+
+.small {
+    width: 90%;
+    height: 57px;
+  }
+  
+  .large {
+    width: 90%;
+    height: 150px;
+  }
 
 .modal_input:focus
 {   background-color: #ffffff;
     border: none;
-    outline: none;
+    outline: 2px solid #0C66E4;
     
 }
 
@@ -90,7 +104,7 @@
     font-size: 14px;
     font-weight: 600;
     color: #172b4d;
-    height: 40px;
+    height: 30px;
     padding-left: 10px;
     background-color: transparent;
     border-radius: 5px;
@@ -112,26 +126,29 @@
 .move
 {    cursor: pointer;
     display: block;
-    padding: 8px;
+    padding: 6px 12px;
     text-align: center;
-    color: #ffffff;
-    margin: 20px;
-    height: 39px;
-    width: 67px;
+    color: #172b4d;
+    margin: 9px;
+    height: 32px;
+    width: 104px;
     scroll-margin: 80px;
-    background-color: #0c66e4;
+    background-color: #091e420f;
     border-radius: 5px;
     font-size: 14px;
-    font-weight:600 ;
+    font-weight:400 ;
     margin-bottom: 10px;
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
+    position: relative;
+    right: -590px;
+    top:-15px;
 }
 
 .move:hover
 {
-    background-color:#0055CC;
+    background-color:#D0D4DB;
 }
 .close {
     position: absolute;
@@ -143,4 +160,24 @@
     position: absolute;
     top: 122px;
     left: 10px;
+}
+.list-type{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+    margin-left: 10px;
+    font-weight: 400;
+}
+.underline{
+    text-decoration: underline;
+}
+.action{
+    color:#44546f;
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 24px;
+    position: relative;
+    right: -609px;
+    margin-top: 25px;
+
 }

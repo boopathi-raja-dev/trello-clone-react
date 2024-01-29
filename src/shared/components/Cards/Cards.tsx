@@ -1,12 +1,10 @@
 import React,{useContext} from 'react'
 import './Cards.css'
-import CardContent from '../CardContent/CradContent';
-
+import CardContent from '../CardContent/CardContent';
 import { CardContext } from '../../../context/CardContext';
 
 
 function Cards() {
-// const cardTypes = useCardContext();
 const card = useContext(CardContext);
 const cardTypes = card?.cardTypes!;
 const setCardTypes = card?.setCardTypes!;
@@ -29,3 +27,5 @@ return (
 }
 
 export default Cards
+
+

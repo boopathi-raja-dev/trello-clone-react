@@ -7,7 +7,7 @@ import { ModalContext } from '../../../context/ModalContex'
 import { CardContext } from '../../../context/CardContext'
 
 type props = {
-    title:string,
+    title:string
 }
 
 function CardContent({title}: props) {
@@ -15,7 +15,6 @@ function CardContent({title}: props) {
     const card = useContext(CardContext);
     const cardTypes = card?.cardTypes!;
     const setCardTypes = card?.setCardTypes!;
-    
    const textcontext = useTaskContext();
    
    const useModalContext = useContext(ModalContext);
@@ -31,9 +30,10 @@ function CardContent({title}: props) {
         {
             return{
                 ...card,
-                task:[...card.task,input]
+                task:[...card.task,input],
+                description:[...card.description,'']
             };  
-           
+
         }
         return card;
      })
@@ -42,8 +42,7 @@ function CardContent({title}: props) {
 
    const deleteCard = (title:string, cards:string) =>
    {
-     
-     const updatecardTypes = cardTypes.map((card,ind) => {
+     const updatecardTypes = cardTypes.map((card) => {
         if(card.title === title)
         {
             return{

@@ -1,5 +1,3 @@
-/* $board_Color:#AC4C7A;
-$content_color:#9C446E; */
 .board{
     width: 16px;
     position :fixed;
@@ -38,7 +36,6 @@ border-right: 1px solid #B35A85;
 }
 
 .board_name {
-    /* background: transparent; */
     font-size: 18px;
     font-weight: bold;
     line-height: 32px;
