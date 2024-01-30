@@ -82,14 +82,14 @@
 .modal_input:focus
 {   background-color: #ffffff;
     border: none;
-    outline: 2px solid #0C66E4;
+    outline: 3px solid #0C66E4;
     
 }
 
 .modal_input::placeholder
 {
    color: #172b4d;
-   font-weight: 400;
+   font-weight: 500;
    font-size: 15px;
    position: absolute;
    top:15px;
@@ -180,4 +180,32 @@
     right: -609px;
     margin-top: 25px;
 
+}
+.save-btn{
+padding: 7px 14px;
+margin-top: 10px;
+margin-left: 20px;
+border-radius: 3px;
+background-color: #0C66E4;
+color: #ffffff;
+border: none;
+font-size: 14px;
+font-weight: 550;
+}
+.cancel-btn{
+    margin-left: 5px;
+    padding: 7px 14px;
+    border-radius: 3px;
+    margin-top: 10px;
+    font-size: 14px;
+    border:none ;
+    background-color: #F1F2F4;
+    font-weight: 550;
+    color: #1C3051;
+}
+.save-btn:hover{
+    background-color: #0055CC;
+}
+.cancel-btn:hover{
+    background-color: #D0D4DB;
 }

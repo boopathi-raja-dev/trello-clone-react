@@ -72,3 +72,8 @@
     white-space: normal;
     padding: 10px;
 }
+
+.description_icon{
+    color: #44546f;
+    cursor: pointer;
+}

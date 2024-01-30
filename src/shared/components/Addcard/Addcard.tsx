@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 type props = {
     title:string,
-    addCard:(title:string,input:string) => void
+    addCard:(title: string, newTask: { taskName: string, taskDescription: string, completed: boolean })=>void
 }
 
 function Addcard({title,addCard}:props) {
@@ -35,7 +35,7 @@ function Addcard({title,addCard}:props) {
       setError('*First character and following character should not be a special character');
   
     } else {
-      addCard(title, Cardtext);
+      addCard(title, { taskName: Cardtext, taskDescription: '', completed: false });
       setCardtext('');
       setError('');
       setCardDisplay(false);

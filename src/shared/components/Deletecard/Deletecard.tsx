@@ -25,7 +25,7 @@ function Deletecard({title,value}:props) {
         {
             return{
                 ...card,
-                task:card.task.filter((task) => task !== cards)
+                task:card.task.filter((task) => task.taskName !== cards)
             };  
             
         }
@@ -34,6 +34,9 @@ function Deletecard({title,value}:props) {
     setCardTypes(updatecardTypes);
     
     }
+
+
+   
 
     const handleDeleteClick = (title:string,task:string) => {
 

@@ -1,85 +1,88 @@
-import React from 'react'
-import { useContext ,useState} from 'react'
-import { MoveContext } from '../../../context/MoveContex' 
+import React, { useContext, useState } from 'react';
+import { MoveContext } from '../../../context/MoveContex';
+import { CardContext } from '../../../context/CardContext';
+import { ModalContext } from '../../../context/ModalContex';
 import './Movecard.css'
-import { CardContext } from '../../../context/CardContext'
-import { ModalContext } from '../../../context/ModalContex'
 
-type move = 
-{
-  prevtitle:string,
-  newtitle:string,
-  cards:string
-}
-
+type Move = {
+  prevtitle: string;
+  newtitle: string;
+  cards: string;
+  desc_value: string;
+  completed: boolean;
+};
 
 function Movecard() {
-    const useMoveContext = useContext(MoveContext)
-    const useCardContext = useContext(CardContext);
-    const cardTypes = useCardContext?.cardTypes!;
-    const setCardTypes = useCardContext?.setCardTypes!;
-    const useModalContext = useContext(ModalContext);
-    const modalVisible = useModalContext?.modalVisible!;
+  const useMoveContext = useContext(MoveContext);
+  const useCardContext = useContext(CardContext);
+  const cardTypes = useCardContext?.cardTypes!;
+  const setCardTypes = useCardContext?.setCardTypes!;
+  const useModalContext = useContext(ModalContext);
+  const modalVisible = useModalContext?.modalVisible!;
+  const description = useModalContext?.description!;
+  const completed=useModalContext?.completed;
+  const setcompleted=useModalContext?.setcompleted;
+  const setdescription = useModalContext?.setdescription!;
     const setModalVisible = useModalContext?.setModalVisible!;
-    const taskValue = useModalContext?.taskValue!;
-    const titleValue = useModalContext?.titleValue!;
-    const [selectedOption, setSelectedOption] = useState<string>(titleValue);    
-    const [movecardVisible, setMovecardVisible] = useState<boolean>(true);
-
-    const move = ({prevtitle,newtitle,cards}:move)=>{
-      //delete
-        const updatedcardTypes = cardTypes.map((card,ind) => {
-          if(card.title === prevtitle)
-          {
-              return{
-                  ...card,
-                  task:card.task.filter((task) => task !== cards)
-              };  
-            
-          }
-          else if(card.title === newtitle)
-          {
-            return{
-                ...card,
-                task:[...card.task,cards]
-            };  
-           
-          }
-          return card;
-      })
-      setCardTypes(updatedcardTypes);
-    }
-    
-    const handleMoveButtonClick = () => {
-      let prevtitle: string = titleValue;
-      let newtitle: string = selectedOption;
-      let cards: string = taskValue;
-      if (titleValue !== selectedOption) {
-        moveTask(prevtitle, newtitle, cards);
-      } else {
-        setModalVisible(false);
+  const taskValue = useModalContext?.taskValue!;
+  const titleValue = useModalContext?.titleValue!;
+  const [selectedOption, setSelectedOption] = useState<string>(titleValue);
+  const [movecardVisible, setMovecardVisible] = useState<boolean>(true);
+  const move = ({ prevtitle, newtitle, cards, desc_value, completed }: Move) => {
+    const updatedCardTypes = cardTypes.map((card) => {
+      if (card.title === prevtitle) {
+        return {
+          ...card,
+          task: card.task.filter((task) => task.taskName !== cards),
+        };
       }
-    };
+      return card;
+    });
+    const newCardTypes = updatedCardTypes.map((card) => {
+      if (card.title === newtitle) {
+        return {
+          ...card,
+          task: [...card.task, { taskName: cards, taskDescription: desc_value, completed: completed }],
+        };
+      }
+      return card;
+    });
   
+    setCardTypes(newCardTypes);
+  };
   
-    const moveTask = (prevtitle: string, newtitle: string, cards: string) => {
-      move({ prevtitle, newtitle, cards });
-      setModalVisible(!modalVisible);
-    };
-  
-    const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-      let str = e.target.value;
-      setSelectedOption(str);
-    };
 
-    const handleCloseIconClick = () => {
-      setMovecardVisible(false);
-     
-    };
-  
-    if (!movecardVisible) {
-      return null;
+  const handleMoveButtonClick = () => {
+    let prevtitle = titleValue;
+    let newtitle= selectedOption;
+    let desc_value = description;
+    let complete_value = false;
+    let cards = taskValue;
+    if (titleValue !== selectedOption) {
+      moveTask(prevtitle, newtitle, cards, desc_value, complete_value);
+    } else {
+      setModalVisible(false);
     }
+  };
+
+  const moveTask = (prevtitle: string, newtitle: string, cards: string, desc_value: string, completed: boolean) => {
+    move({ prevtitle, newtitle, cards, desc_value, completed });
+    setModalVisible(!modalVisible);
+  };
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    let str = e.target.value;
+    setSelectedOption(str);
+  };
+
+  const handleCloseIconClick = () => {
+    setMovecardVisible(false);
+  };
+
+  if (!movecardVisible) {
+    return null;
+  }
+
   return (
     <div className ='window-overlay-small'>
     <div className='window-small'>
@@ -126,3 +129,4 @@ function Movecard() {
 }
 
 export default Movecard
+

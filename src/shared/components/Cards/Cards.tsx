@@ -9,9 +9,6 @@ const card = useContext(CardContext);
 const cardTypes = card?.cardTypes!;
 const setCardTypes = card?.setCardTypes!;
 
-
-// cardTypes
-
 return (
     <div>
       <ol className='card-container card-pos'>

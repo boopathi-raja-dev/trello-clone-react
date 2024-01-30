@@ -16,6 +16,8 @@ function App() {
   const [ cardTypes, setCardTypes ] = useState<CardsTypes[]>(initialCards);
   const [taskValue,setTaskValue] = useState<string>('');
   const [titleValue,setTitleValue] = useState<string>('');
+  const [description,setdescription]=useState<string>('');
+  const [completed,setcompleted]=useState<boolean>(false);
 
   const handleVisible = () => {
        setModalVisible(!modalVisible);
@@ -25,7 +27,7 @@ function App() {
     <div className="App">
       <CardContext.Provider value = {{cardTypes,setCardTypes}}>
         <taskContext.Provider value = {{task,setTask}}>
-          <ModalContext.Provider value = {{modalVisible,setModalVisible,taskValue,setTaskValue,titleValue,setTitleValue}}>
+          <ModalContext.Provider value = {{modalVisible,setModalVisible,taskValue,setTaskValue,titleValue,setTitleValue,description,setdescription,completed,setcompleted}}>
               <NavBar/>
               <Board/>
               <Cards />
