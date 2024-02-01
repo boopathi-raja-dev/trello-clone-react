@@ -2,9 +2,9 @@ import React, { useState, useContext } from 'react'
 import './cardContent.scss'
 import Addcard from '../AddCard/addCard'
 import { MdDeleteOutline } from 'react-icons/md'
-import { taskContext, useTaskContext } from '../../../context/TaskContent'
-import { ModalContext } from '../../../context/ModalContex'
-import { CardContext } from '../../../context/CardContext'
+import { taskContext, useTaskContext } from '../../../context/taskContext'
+import { ModalContext } from '../../../context/modalContext'
+import { CardContext } from '../../../context/cardContext'
 import { ReactComponent as DescIcon } from '../../../assets/description.svg'
 
 type props = {

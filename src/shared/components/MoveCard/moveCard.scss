@@ -24,12 +24,12 @@
 	width: 192px;
 	-webkit-appearance: none;
 	&:hover {
-		background-color: $background-color_sModal_hover;
+		background-color: $background-color_small_modal_hover;
 	}
 }
 .position {
 	&:hover {
-		background-color: $background-color_sModal_hover;
+		background-color: $background-color_small_modal_hover;
 	}
 	width: 80px;
 	height: 50px;
@@ -45,7 +45,7 @@
 }
 .board-btn {
 	&:hover {
-		background-color: $background-color_sModal_hover;
+		background-color: $background-color_small_modal_hover;
 	}
 	width: 280px;
 	height: 43px;
@@ -55,7 +55,7 @@
 }
 .done-btn {
 	&:hover {
-		background-color: $background-color_sModal_hover;
+		background-color: $background-color_small_modal_hover;
 	}
 	width: 280px;
 	height: 32px;

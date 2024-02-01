@@ -1,9 +1,9 @@
 import React from 'react'
 import { Button, Flex } from 'antd';
 import './deleteCard.scss'
-import { CardContext } from '../../../context/CardContext'
+import { CardContext } from '../../../context/cardContext'
 import { useContext } from 'react';
-import { ModalContext } from '../../../context/ModalContex';
+import { ModalContext } from '../../../context/modalContext';
 type props = {
     title: string,
     value: string

@@ -4,11 +4,11 @@ import NavBar from './shared/components/Navbar/navbar';
 import Board from './shared/components/Board/board';
 import Cards from './shared/components/Cards/cards';
 import ModalCreate from './shared/components/ModalCreate/modalCreate';
-import { taskContext } from './context/TaskContent';
-import { CardContext} from './context/CardContext';
-import { ModalContext } from './context/ModalContex'; 
-import { CardsTypes } from './shared/types/CardsTypes';
-import { initialCards } from './context/CardContext';
+import { taskContext } from './context/taskContext';
+import { CardContext} from './context/cardContext';
+import { ModalContext } from './context/modalContext'; 
+import { CardsTypes } from './shared/types/cardsTypes';
+import { initialCards } from './context/cardContext';
 
 function App() {
   const [modalVisible,setModalVisible] = useState<boolean>(false);

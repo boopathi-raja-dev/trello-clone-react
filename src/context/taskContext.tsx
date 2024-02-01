@@ -1,5 +1,5 @@
 import { createContext ,useContext} from 'react';
-import { TaskContent } from '../shared/types/TaskTypes';
+import { TaskContent } from '../shared/types/taskTypes';
 
 
 export const taskContext = createContext<TaskContent | null>(null);

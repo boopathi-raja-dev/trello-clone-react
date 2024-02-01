@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react';
 import './modalCreate.scss';
 import Movecard from '../MoveCard/moveCard';
 import Deletecard from '../DeleteCard/deleteCard';
-import { ModalContext } from '../../../context/ModalContex';
-import { MoveContext } from '../../../context/MoveContex';
-import { CardContext } from '../../../context/CardContext';
+import { ModalContext } from '../../../context/modalContext';
+import { MoveContext } from '../../../context/moveContext';
+import { CardContext } from '../../../context/cardContext';
 import { ReactComponent as BusIcon } from '../../../assets/bus.svg';
 import { ReactComponent as DesIcon } from '../../../assets/desc.svg';
 

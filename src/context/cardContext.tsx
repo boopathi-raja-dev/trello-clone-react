@@ -1,4 +1,4 @@
-import { CardsTypes } from "../shared/types/CardsTypes";
+import { CardsTypes } from "../shared/types/cardsTypes";
 import { createContext, useContext, useState } from "react";
 
 type modal =

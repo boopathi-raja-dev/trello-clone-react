@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { MoveContext } from '../../../context/MoveContex';
-import { CardContext } from '../../../context/CardContext';
-import { ModalContext } from '../../../context/ModalContex';
+import { MoveContext } from '../../../context/moveContext';
+import { CardContext } from '../../../context/cardContext';
+import { ModalContext } from '../../../context/modalContext';
 import './moveCard.scss'
 
 type Move = {
@@ -24,7 +24,7 @@ const Movecard = () => {
   const taskValue = useModalContext?.taskValue!;
   const titleValue = useModalContext?.titleValue!;
   const [selectedOption, setSelectedOption] = useState<string>(titleValue);
-  const [movecardVisible, setMovecardVisible] = useState<boolean>(true);
+  const [moveCardVisible, setMoveCardVisible] = useState<boolean>(true);
   const move = ({ prevTitle, newTitle, cards, descValue, completed }: Move) => {
     const updatedCardTypes = cardTypes.map((card) => {
       if (card.title === prevTitle) {
@@ -73,10 +73,10 @@ const Movecard = () => {
   };
 
   const handleCloseIconClick = () => {
-    setMovecardVisible(false);
+    setMoveCardVisible(false);
   };
 
-  if (!movecardVisible) {
+  if (!moveCardVisible) {
     return null;
   }
 

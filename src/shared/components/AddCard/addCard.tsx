@@ -10,7 +10,7 @@ type props = {
 const Addcard = ({ title, addCard }: props) => {
 
   const [cardDisplay, setCardDisplay] = useState<boolean>(true);
-  const [Cardtext, setCardtext] = useState<string>('');
+  const [cardText, setCardText] = useState<string>('');
   const [error, setError] = useState<string>('');
 
 
@@ -19,21 +19,21 @@ const Addcard = ({ title, addCard }: props) => {
   }
   const close = () => {
     setCardDisplay(true);
-    setCardtext("")
+    setCardText("")
     setError('');
 
   }
 
   const handleClick = () => {
-    if (Cardtext === '') {
+    if (cardText === '') {
       setError('*Title is required');
 
-    } else if (!/^[a-zA-Z][a-zA-Z0-9\s]*$/.test(Cardtext)) {
+    } else if (!/^[a-zA-Z][a-zA-Z0-9\s]*$/.test(cardText)) {
       setError('*First character and following character should not be a special character');
 
     } else {
-      addCard(title, { taskName: Cardtext, taskDescription: '', completed: false });
-      setCardtext('');
+      addCard(title, { taskName: cardText, taskDescription: '', completed: false });
+      setCardText('');
       setError('');
       setCardDisplay(false);
     }
@@ -57,7 +57,7 @@ const Addcard = ({ title, addCard }: props) => {
 
       </button> :
         <div >
-          <input className='input-title' placeholder='Enter a title for this card...' onChange={(e) => { setCardtext(e.target.value) }} value={Cardtext} onKeyDown={handleKeyPress}></input>
+          <input className='input-title' placeholder='Enter a title for this card...' onChange={(e) => { setCardText(e.target.value) }} value={cardText} onKeyDown={handleKeyPress}></input>
 
           {error && <div className='error'>{error}</div>}
           <button className='btn' onClick={handleClick}>
