@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import './cards.scss'
-import CardContent from '../CardContent/cardContent';
+import CardContent from '../CardContent';
 import { CardContext } from '../../../context/cardContext';
 
 

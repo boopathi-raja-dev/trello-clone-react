@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import './cardContent.scss'
-import Addcard from '../AddCard/addCard'
+import Addcard from '../AddCard'
 import { MdDeleteOutline } from 'react-icons/md'
 import { taskContext, useTaskContext } from '../../../context/taskContext'
 import { ModalContext } from '../../../context/modalContext'

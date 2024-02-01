@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import './modalCreate.scss';
-import Movecard from '../MoveCard/moveCard';
-import Deletecard from '../DeleteCard/deleteCard';
+import Movecard from '../MoveCard';
+import Deletecard from '../DeleteCard';
 import { ModalContext } from '../../../context/modalContext';
 import { MoveContext } from '../../../context/moveContext';
 import { CardContext } from '../../../context/cardContext';

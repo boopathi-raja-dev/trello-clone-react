@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import NavBar from './shared/components/Navbar/navbar';
-import Board from './shared/components/Board/board';
-import Cards from './shared/components/Cards/cards';
-import ModalCreate from './shared/components/ModalCreate/modalCreate';
+import NavBar from './shared/components/Navbar';
+import Board from './shared/components/Board';
+import Cards from './shared/components/Cards';
+import ModalCreate from './shared/components/ModalCreate';
 import { taskContext } from './context/taskContext';
 import { CardContext} from './context/cardContext';
 import { ModalContext } from './context/modalContext'; 
