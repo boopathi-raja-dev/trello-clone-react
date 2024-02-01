@@ -7,7 +7,7 @@ export interface Modaltypes
     titleValue:string,
     setTitleValue:React.Dispatch<React.SetStateAction<string>>
     description:string,
-    setdescription:React.Dispatch<React.SetStateAction<string>>
+    setDescription:React.Dispatch<React.SetStateAction<string>>
     completed:boolean,
-    setcompleted:React.Dispatch<React.SetStateAction<boolean>>
+    setCompleted:React.Dispatch<React.SetStateAction<boolean>>
 }

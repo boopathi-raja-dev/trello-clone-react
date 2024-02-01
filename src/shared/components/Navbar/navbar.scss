@@ -1,0 +1,171 @@
+@import '../../../styles/variables';
+.navbar {
+	background-color: $background-color_nav;
+	font-family: $font-family;
+	li {
+		float: left;
+		margin-top: 20px;
+		top: -6px;
+		list-style: none;
+		a {
+			padding: 3px 3px;
+			text-decoration: none;
+			font-size: 14px;
+			color: $color_white;
+		}
+	}
+	ul {
+		overflow: auto;
+		margin: 0;
+	}
+	input {
+		position: absolute;
+		border: 0px solid white;
+		border-radius: 6px;
+		right: 120px;
+		padding: 8px;
+		margin-top: -3px;
+		width: 180px;
+		background-color: $background-color_create_btn;
+	}
+	button.dropdown {
+		&:hover {
+			border: 0px solid white;
+			border-radius: 2px;
+			color: $color_white;
+			background-color: $background-dropdown_hover;
+		}
+	}
+}
+.search {
+	float: right;
+	color: $color_white;
+	padding: 12px 75px;
+}
+input {
+	&::placeholder {
+		color: $color_pure_white;
+		padding-left: 23px;
+		font-size: 14px;
+		font-family: $font-family;
+	}
+}
+.search-hover {
+	&:hover {
+		background-color: $background-color_create_hover;
+	}
+}
+.appIcon {
+	color: $color_white;
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	left: 15px;
+	top: 13.5px;
+	line-height: 20px;
+}
+.dropdown {
+	&::after {
+		content: " ";
+		border: 2px solid;
+		border-left: 0;
+		border-top: 0;
+		top: 2px;
+		width: 0.01rem;
+		height: 0.4rem;
+		position: relative;
+		transform: rotate(45deg);
+		float: right;
+		padding-left: 6px;
+		border-color: $border-color;
+		margin-left: 11px;
+	}
+	background-color: $background-color_transparent;
+	border: none;
+	color: $color_pure_white;
+	text-decoration: none;
+	display: inline-block;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	padding-top: 5px;
+	color: $color_pure_white;
+	display: flex;
+	font-family: $font-family;
+	justify-content: space-between;
+	font-size: 14px;
+	font-weight: 500;
+}
+.static {
+	position: relative;
+	width: 76px;
+	height: 15px;
+	top: 16px;
+	left: 8px;
+	background-color: $background-color_nav;
+	&:hover {
+		opacity: 0;
+	}
+}
+.active {
+	background-color: $background-color_nav;
+	width: 76px;
+	height: 15px;
+	top: 16px;
+	left: -68px;
+	position: relative;
+	&:hover {
+		opacity: 0;
+	}
+}
+.container-items {
+	display: flex;
+	gap: 10px;
+	position: absolute;
+	left: 140px;
+	top: 11px;
+}
+.create-btn {
+	border: 0px solid white;
+	border-radius: 2px;
+	color: $color_pure_white;
+	background-color: $background-color_create_btn;
+	padding: 5px 12px;
+	color: $color_pure_white;
+	font-size: 14px;
+	font-weight: 500;
+	font-family: $font-family;
+	margin-left: 13px;
+	&:hover {
+		background-color: $background-color_create_hover;
+	}
+}
+.bell_icon {
+	color: $color_pure_white;
+	position: absolute;
+	right: 84px;
+	top: 12px;
+}
+.question_icon {
+	color: $color_pure_white;
+	position: absolute;
+	right: 50px;
+	top: 14px;
+}
+.id_icon {
+	color: $color_pure_white;
+	position: absolute;
+	right: 12px;
+	border: 1px solid #DE350A;
+	padding: 4px;
+	font-size: 11px;
+	border-radius: 50%;
+	background-color: $background-color_id;
+	top: 13px;
+}
+.search_icon {
+	position: absolute;
+	color: $color_pure_white;
+	top: 16px;
+	right: 291px;
+}
+

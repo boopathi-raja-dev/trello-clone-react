@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import NavBar from './shared/components/Navbar/navBar';
-import Board from './shared/components/Board/Board';
-import Cards from './shared/components/Cards/Cards';
-import ModalCreate from './shared/components/ModalCreate/ModalCreate';
+import NavBar from './shared/components/Navbar/navbar';
+import Board from './shared/components/Board/board';
+import Cards from './shared/components/Cards/cards';
+import ModalCreate from './shared/components/ModalCreate/modalCreate';
 import { taskContext } from './context/TaskContent';
 import { CardContext} from './context/CardContext';
 import { ModalContext } from './context/ModalContex'; 
@@ -16,8 +16,8 @@ function App() {
   const [ cardTypes, setCardTypes ] = useState<CardsTypes[]>(initialCards);
   const [taskValue,setTaskValue] = useState<string>('');
   const [titleValue,setTitleValue] = useState<string>('');
-  const [description,setdescription]=useState<string>('');
-  const [completed,setcompleted]=useState<boolean>(false);
+  const [description,setDescription]=useState<string>('');
+  const [completed,setCompleted]=useState<boolean>(false);
 
   const handleVisible = () => {
        setModalVisible(!modalVisible);
@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <CardContext.Provider value = {{cardTypes,setCardTypes}}>
         <taskContext.Provider value = {{task,setTask}}>
-          <ModalContext.Provider value = {{modalVisible,setModalVisible,taskValue,setTaskValue,titleValue,setTitleValue,description,setdescription,completed,setcompleted}}>
+          <ModalContext.Provider value = {{modalVisible,setModalVisible,taskValue,setTaskValue,titleValue,setTitleValue,description,setDescription,completed,setCompleted}}>
               <NavBar/>
               <Board/>
               <Cards />

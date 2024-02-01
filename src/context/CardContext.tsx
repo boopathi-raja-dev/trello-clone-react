@@ -12,21 +12,18 @@ export const initialCards: CardsTypes[] = [
         index: 1,
         title: 'To do',
         task: [
-            // { taskName: '', taskDescription: '', completed: false }, 
         ],
     },
     {
         index: 2,
         title: 'Doing',
         task: [
-            // { taskName: '', taskDescription: '', completed: false },
         ],
     },
     {
         index: 3,
         title: 'Done',
         task: [
-            // { taskName: '', taskDescription: '', completed: false },
         ],
     }]
 

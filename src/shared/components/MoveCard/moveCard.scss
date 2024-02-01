@@ -1,0 +1,145 @@
+@import '../../../styles/variables';
+.move_box {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	background-color: $background-color_transparent;
+	height: 100px;
+	width: 200px;
+	z-index: 40;
+	margin-left: 10px;
+}
+.move-list {
+	background-color: $background-color_move;
+	color: $color_title;
+	position: absolute;
+	border: none;
+	top: 0;
+	left: -8px;
+	padding-left: 5px;
+	font-weight: 600;
+	font-size: 14px;
+	height: 50px;
+	outline: none;
+	width: 192px;
+	-webkit-appearance: none;
+	&:hover {
+		background-color: $background-color_sModal_hover;
+	}
+}
+.position {
+	&:hover {
+		background-color: $background-color_sModal_hover;
+	}
+	width: 80px;
+	height: 50px;
+	-webkit-appearance: none;
+	padding-left: 5px;
+	background-color: $background-color_move;
+	color: $color_title;
+	border: none;
+	outline: none;
+	&:active {
+		outline: none;
+	}
+}
+.board-btn {
+	&:hover {
+		background-color: $background-color_sModal_hover;
+	}
+	width: 280px;
+	height: 43px;
+	padding-left: 5px;
+	background-color: $background-color_move;
+	margin-bottom: 15px;
+}
+.done-btn {
+	&:hover {
+		background-color: $background-color_sModal_hover;
+	}
+	width: 280px;
+	height: 32px;
+	display: block;
+	display: flex;
+	padding-left: 5px;
+	background-color: $background-color_move;
+}
+.window-small {
+	display: block;
+	background-color: $border-color;
+	border-radius: 12px;
+	margin: 60px 60%;
+	position: relative;
+	width: 280px;
+	z-index: 30;
+	padding: 12px;
+	min-height: 268px;
+}
+.window-overlay-small {
+	display: block;
+	align-items: flex-start;
+	height: 100%;
+	justify-content: center;
+	right: 10px;
+	position: fixed;
+	top: 10px;
+	width: 100%;
+	z-index: 25;
+}
+.move-card {
+	font-size: 14px;
+	font-weight: 600;
+	display: flex;
+	justify-content: center;
+	color: $color_grey;
+	padding-bottom: 20px;
+}
+.move_container {
+	display: flex;
+	flex-direction: row;
+}
+.move_item {
+	display: flex;
+	flex-direction: column;
+}
+.move-btn {
+	color: $border-color;
+	background-color: $background-color_save_btn;
+	width: 83.2px;
+	height: 32px;
+	cursor: pointer;
+	border-radius: 3px;
+	text-align: center;
+	font-weight: 600;
+	padding-top: 5px;
+	margin-top: 5px;
+	&:hover{
+		background-color: $background-color_save_btn_hover;
+	}
+}
+.position_top {
+	position: absolute;
+	font-size: 13px;
+	padding-left: 5px;
+	z-index: 40;
+}
+.position-top {
+	font-size: 13px;
+}
+.trell-btn {
+	font-size: 14px;
+	font-weight: 500;
+}
+.heading-color {
+	color: $color_grey;
+	font-weight: 600;
+	font-size: 12px;
+}
+.close-icon {
+	position: absolute;
+	right: 29px;
+	color: $color_grey_2;
+	top: 14px;
+	font-size: 17px;
+}
+
