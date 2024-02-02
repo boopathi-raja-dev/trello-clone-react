@@ -11,12 +11,10 @@ type props = {
 
 
 const Deletecard = ({ title, value }: props) => {
-    const card = useContext(CardContext);
-    const cardTypes = card?.cardTypes!;
-    const setCardTypes = card?.setCardTypes!;
-    const close = useContext(ModalContext);
-    const setModalVisibile = close?.setModalVisible!;
-    const deleteCard = (title: string, cards: string) => {
+ 
+   const {cardTypes,setCardTypes}=useContext(CardContext)!;
+   const {setModalVisible}=useContext(ModalContext)!;
+   const deleteCard = (title: string, cards: string) => {
 
         const updatecardTypes = cardTypes.map((card) => {
             if (card.title === title) {
@@ -38,7 +36,7 @@ const Deletecard = ({ title, value }: props) => {
     const handleDeleteClick = (title: string, task: string) => {
 
         deleteCard(title, task)
-        setModalVisibile(false)
+        setModalVisible(false)
     }
 
     return (

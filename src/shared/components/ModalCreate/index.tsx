@@ -16,18 +16,10 @@ type ModalCreateProps = {
 };
 
 const ModalCreate = ({ modalVisible, handleVisible }: ModalCreateProps) => {
-
-  const useModalContext = useContext(ModalContext);
-  const taskValue = useModalContext?.taskValue!;
-  const setTaskValue = useModalContext?.setTaskValue!;
-  const titleValue = useModalContext?.titleValue!;
+  const {taskValue,setTaskValue,titleValue,description,setDescription}=useContext(ModalContext)!;
   const [drop, setDrop] = useState<boolean>(false);
   const [large, setLarge] = useState<boolean>(false);
-  const description = useModalContext?.description!;
-  const setDescription = useModalContext?.setDescription!;
-  const card = useContext(CardContext);
-  const cardTypes = card?.cardTypes!;
-  const setCardTypes = card?.setCardTypes!;
+  const {cardTypes,setCardTypes}=useContext(CardContext)!;
   const descValue = description;
 
   const updateTaskValue = (newValue: string) => {

@@ -13,18 +13,11 @@ type Move = {
 };
 
 const Movecard = () => {
-
-  const useCardContext = useContext(CardContext);
-  const cardTypes = useCardContext?.cardTypes!;
-  const setCardTypes = useCardContext?.setCardTypes!;
-  const useModalContext = useContext(ModalContext);
-  const modalVisible = useModalContext?.modalVisible!;
-  const description = useModalContext?.description!;
-  const setModalVisible = useModalContext?.setModalVisible!;
-  const taskValue = useModalContext?.taskValue!;
-  const titleValue = useModalContext?.titleValue!;
+  const {cardTypes,setCardTypes}=useContext(CardContext)!;
+  const {modalVisible,description,setModalVisible,taskValue,titleValue}=useContext(ModalContext)!;
   const [selectedOption, setSelectedOption] = useState<string>(titleValue);
   const [moveCardVisible, setMoveCardVisible] = useState<boolean>(true);
+  
   const move = ({ prevTitle, newTitle, cards, descValue, completed }: Move) => {
     const updatedCardTypes = cardTypes.map((card) => {
       if (card.title === prevTitle) {

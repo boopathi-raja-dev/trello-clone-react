@@ -1,3 +1,4 @@
+
 import React, { useState, useContext } from 'react'
 import './cardContent.scss'
 import Addcard from '../AddCard'
@@ -13,16 +14,9 @@ type props = {
 
 const CardContent = ({ title }: props) => {
 
-  const card = useContext(CardContext);
-  const cardTypes = card?.cardTypes!;
-  const setCardTypes = card?.setCardTypes!;
-  const useModalContext = useContext(ModalContext);
-  const task = useContext(taskContext);
-  const setModalVisible = useModalContext?.setModalVisible!;
-  const setTaskValue = useModalContext?.setTaskValue!;
-  const setTitleValue = useModalContext?.setTitleValue!;
-  const completed = useModalContext?.completed!;
-  const setCompleted = useModalContext?.setCompleted!;
+  const {cardTypes,setCardTypes}=useContext(CardContext)!;
+  const {setTaskValue,completed,setModalVisible,setTitleValue}=useContext(ModalContext)!;
+
 
   const addCard = (title: string, newTask: { taskName: string, taskDescription: string, completed: boolean }) => {
     const updatedCardTypes = cardTypes.map((card) => {
@@ -97,4 +91,5 @@ const CardContent = ({ title }: props) => {
   )
 }
 
-export default CardContent
+ export default CardContent 
+ 

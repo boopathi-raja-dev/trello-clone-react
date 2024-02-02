@@ -5,8 +5,7 @@ import { CardContext } from '../../../context/cardContext';
 
 
 const Cards = () => {
-  const card = useContext(CardContext);
-  const cardTypes = card?.cardTypes!;
+  const{cardTypes}=useContext(CardContext)!;
 
   return (
     <div>
